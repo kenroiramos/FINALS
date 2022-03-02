@@ -13,12 +13,10 @@ int main()
 	int willContinue = 0;
 	int IsCompatible = 1;
 	
-	//allocate a Respondents struct for the user data
 	Respondents* respo = (Respondents*)malloc(sizeof(Respondents));
 
 	for(int i = 0; i < questionsSize - 1;)
 	{
-		//condition for the user compatibility
 		if(
 		(respo->IsFromMetroManila != 1 && i == 3) ||
 		(respo->isTakingOnlineClass != 1 && i == 4) ||
@@ -29,12 +27,10 @@ int main()
 			break;
 		}
 		
-		//displays the AI's question
 		printf("%s: %s\n", AIName, AIQuestions[i]);
 		willContinue = Questionings(i, respo);
 		system("cls");
 		
-		//repeat the display screen if the user has input an invalid response
 		if(willContinue == 1)
 		{
 			willContinue = 0;
@@ -43,7 +39,6 @@ int main()
 		i++;
 	}
 	
-	//If the user is compatible base on his/her responses, then his/her data will be recorded
 	if(IsCompatible == 1)
 	{
 		FILE* file;
@@ -65,7 +60,6 @@ int main()
 	return 0;
 }
 
-//executes the AI's line of questioning
 int Questionings(int index, Respondents* respo)
 {
 	switch(index)
