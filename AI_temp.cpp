@@ -2,7 +2,6 @@
 #include <string.h>
 #include "AI_temp.h"
 
-// Removes or cleans the dangling 'new line' character in stdin
 void flush()
 {
     char c;
@@ -10,7 +9,6 @@ void flush()
         ;
 }
 
-// Removes or cleans the dangling 'new line' character in a char array
 void clearNewLine(char *input)
 {
 	if(input[strlen(input)-1] == '\n')
@@ -19,7 +17,6 @@ void clearNewLine(char *input)
 	}
 }
 
-//displays the strings from the MainMenuChoices char array list
 void displayMainMenu()
 {
 	const int size = sizeof(MainMenuChoices) / sizeof(MainMenuChoices[0]);
@@ -32,7 +29,6 @@ void displayMainMenu()
 	system("cls");
 }
 
-//displays the strings from the FirstSectionChoices char array list
 int displayFirstSectionHelp()
 {
 	const int size = sizeof(FirstSectionChoices) / sizeof(FirstSectionChoices[0]);
@@ -55,14 +51,12 @@ int displayFirstSectionHelp()
 	if(choice == 0)
 		return 0;
 	
-	//delivers the provide help message to the user based from its requested help response / choice
 	printf("%s\n", FirstSectionAnswers[(size - 1) - choice]);
 	printf("\nPress Enter to continue.");
 	flush();
 	return 1;
 }
 
-//displays the strings from the SecondSectionChoices char array list
 int displaySecondSectionHelp()
 {
 	const int size = sizeof(SecondSectionChoices) / sizeof(SecondSectionChoices[0]);
@@ -84,14 +78,12 @@ int displaySecondSectionHelp()
 	if(choice == 0)
 		return 0;
 	
-	//delivers the provide help message to the user based from its requested help response / choice
 	printf("%s\n", SecondSectionAnswers[(size - 1) - choice]);
 	printf("\nPress Enter to continue.");
 	flush();
 	return 1;
 }
 
-//displays the strings from the ThirdSectionChoices char array list
 int displayThirdSectionHelp()
 {
 	const int size = sizeof(ThirdSectionChoices) / sizeof(ThirdSectionChoices[0]);
@@ -112,8 +104,7 @@ int displayThirdSectionHelp()
 	
 	if(choice == 0)
 		return 0;
-	
-	//delivers the provide help message to the user based from its requested help response / choice
+
 	printf("%s\n", ThirdSectionAnswers[(size - 1) - choice]);
 	printf("\nPress Enter to continue.");
 	flush();
@@ -121,7 +112,6 @@ int displayThirdSectionHelp()
 	return 1;
 }
 
-//displays the strings from the FourthSectionChoices char array list
 int displayFourthSectionHelp()
 {
 	const int size = sizeof(FourthSectionChoices) / sizeof(FourthSectionChoices[0]);
@@ -142,8 +132,7 @@ int displayFourthSectionHelp()
 	
 	if(choice == 0)
 		return 0;
-	
-	//delivers the provide help message to the user based from its requested help response / choice
+
 	printf("%s\n", FourthSectionAnswers[(size - 1) - choice]);
 	printf("\nPress Enter to continue.");
 	flush();
